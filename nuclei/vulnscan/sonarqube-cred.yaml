@@ -1,0 +1,18 @@
+id: sonarqube-cred
+
+info:
+  name: Sonarqube Default Credentials
+  author: glatisant
+  severity: high
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/api/authentication/login'
+    body: login=admin&password=admin
+    redirect: false
+    matchers:
+      - type: word
+        words:
+          - 'JWT-SESSION'
+

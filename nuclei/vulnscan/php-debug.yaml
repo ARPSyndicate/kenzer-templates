@@ -1,0 +1,17 @@
+id: php-debug
+
+info:
+  name: PHP Debug
+  author: glatisant
+  severity: medium
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/_debugbar/open?max=20&offset=0'
+    redirect: true
+    matchers:
+      - type: word
+        words:
+          - 'id'
+

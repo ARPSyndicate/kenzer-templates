@@ -1,0 +1,21 @@
+id: php7-rce
+info:
+  name: PHP 7 + Nginx RCE
+
+requests:
+  - method: GET
+    redirect: false
+    url: >-
+     {{.BaseURL}}/index.php
+    middlewares:
+      # not recommend using too much concurrency when calling other Command
+      - >-
+        InvokeCmd("phuip-fpizdam {{.URL}}")
+
+    detections:
+      - >-
+        StringSearch("middleware", "QQQQQQQQQQ") || StringSearch("middleware", "Success!") 
+
+reference:
+  links:
+    - https://github.com/neex/phuip-fpizdam

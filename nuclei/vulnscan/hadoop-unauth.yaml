@@ -1,0 +1,17 @@
+id: hadoop-unauth
+
+info:
+  name: Hadoop Unauthorized Access
+  author: glatisant
+  severity: medium
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/ws/v1/cluster/info"
+    redirect: false
+    matchers:
+      - type: word
+        words:
+          - 'hadoopVersion'
+          - 'resourceManagerVersionBuiltOn'

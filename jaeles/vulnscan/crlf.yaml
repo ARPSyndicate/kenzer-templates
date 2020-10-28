@@ -1,0 +1,21 @@
+id: crlf
+type: fuzz
+info:
+  name: CRLF
+  risk: Medium
+
+variables:
+  - prefix: |
+      %0D%0A
+      %E5%98%8A%E5%98%8D
+
+payloads:
+    - 'unimmque{{.prefix}}mmque'
+
+requests:
+  - generators:
+      - Query("{{.payload}}")
+      - Path("{{.payload}}", "*")
+    detections:
+      - >-
+        StringSearch("response", "unimmque") && !!StringSearch("response", "unimmquemmque")

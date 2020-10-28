@@ -1,0 +1,18 @@
+id: rocketmq-unauth
+
+info:
+  name: RocketMQ Console Unauthorized Access
+  author: glatisant
+  severity: high
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/cluster/list.query'
+    redirect: false
+    matchers:
+      - type: word
+        words:
+          - 'runtime'
+          - 'putMessageDistributeTime'
+
