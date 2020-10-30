@@ -9,8 +9,11 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/global-protect/login.esp"
+      - "{{BaseURL}}/sslmgr"
+
     matchers:
       - type: word
         words:
-          - "GlobalProtect Portal"
           - "<title>GlobalProtect Portal</TITLE>"
+          - "<msg>Invalid parameters</msg>"
+        condition: or
