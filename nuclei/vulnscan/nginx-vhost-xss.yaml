@@ -17,4 +17,5 @@ requests:
         words:
           - '-prompt(1)-'
           - 'nginx vhost traffic'
+        condition: and
 
