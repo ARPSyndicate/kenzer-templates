@@ -23,9 +23,3 @@ requests:
           - "(s|S)(q|Q)(l|L)"
           - "(d|D)(a|A)(t|T)(a|A)(b|B)(a|A)(s|S)(e|E)"
         part: body
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - "(s|S)(q|Q)(l|L).*?[\r\n]"
-          - "(d|D)(a|A)(t|T)(a|A)(b|B)(a|A)(s|S)(e|E).*?[\r\n]"

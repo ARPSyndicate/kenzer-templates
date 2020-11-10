@@ -25,10 +25,4 @@ requests:
           - 200
           - 301
           - 302
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - "<!--(.*?)-->"
-          - "/[*][*](.*?)[*][*]/"
           

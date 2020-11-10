@@ -24,8 +24,3 @@ requests:
           - 200
           - 301
           - 302
-    extractors:
-      - type: regex
-        part: header
-        regex:
-          - '(uuid|user|username|uname|client|name|secret|md5|account).*?[\r\n]'
