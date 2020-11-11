@@ -92,5 +92,6 @@ requests:
           - "application/json"
           - "application/vnd.spring-boot.actuator"
           - "hprof"
+          - "health"
         condition: or
         part: header
