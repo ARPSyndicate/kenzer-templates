@@ -18,5 +18,6 @@ requests:
     detections:
       - >-
         StatusCode() == 200 && StringSearch("resHeader", 'application/grpc-web+proto') && StringSearch("body", 'gke-remote')
+
 references:
   - repo: https://github.com/containous/traefik

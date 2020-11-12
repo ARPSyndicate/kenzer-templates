@@ -1,6 +1,6 @@
-id: joomla-sqli-hdwplayer
+id: joomla-sqli-hdwplayer-01
 info:
-  name: Joomla SQL Injection
+  name: Joomla SQL Injection 01
   risk: High
 
 params:

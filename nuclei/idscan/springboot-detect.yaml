@@ -82,6 +82,7 @@ requests:
           - "JMImplementation"
           - "EnvironmentManager"
           - "org.springframework.boot.loader"
+          - "health"
         condition: or
       - type: status
         status:
@@ -92,6 +93,5 @@ requests:
           - "application/json"
           - "application/vnd.spring-boot.actuator"
           - "hprof"
-          - "health"
         condition: or
         part: header

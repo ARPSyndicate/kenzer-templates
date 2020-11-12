@@ -6,6 +6,9 @@ info:
 params:
   - root: '{{.BaseURL}}'
 
+replicate:
+  ports: '8080'
+
 requests:
   - method: GET
     redirect: false
@@ -14,5 +17,6 @@ requests:
     detections:
       - >-
         StatusCode() == 200 && StringSearch("response", "application/json") && StringSearch("body", '{"runs":[{"id":') && StringSearch("body", "resource_references")
+
 reference:
-  - link: https://github.com/kubeflow/kubeflow 
+  - link: https://github.com/kubeflow/kubeflow

@@ -30,4 +30,4 @@ requests:
         status:
           - 200
           - 404
-        condition: or 
+        condition: or

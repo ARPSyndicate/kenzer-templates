@@ -14,7 +14,9 @@ requests:
           POST / HTTP/1.1
           Host: {{Hostname}}
           Content-Type: application/x-www-form-urlencoded
+
           _=<script>alert(1)</script>
+
     redirects: true
     max-redirects: 2
     matchers:

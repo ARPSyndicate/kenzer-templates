@@ -1,4 +1,4 @@
-id: netdata-unauth-01
+id: netdata-unauth
 info:
   name: Netdata Unauth
   risk: Medium
@@ -16,5 +16,6 @@ requests:
     detections:
       - >-
         StatusCode() == 200 && && StringSearch("resHeaders", "application/json") && StringSearch("response", "view_update_every") && StringSearch("response", "dimensions")
+
 references:
-  - repo: https://github.com/netdata/netdata 
+  - repo: https://github.com/netdata/netdata

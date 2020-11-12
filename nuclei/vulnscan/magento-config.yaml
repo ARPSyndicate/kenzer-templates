@@ -24,4 +24,4 @@ requests:
       - type: word
         words:
           - "Magento"
-        part: body 
+        part: body

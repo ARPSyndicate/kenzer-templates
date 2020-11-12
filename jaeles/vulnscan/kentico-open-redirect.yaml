@@ -19,3 +19,4 @@ requests:
     detections:
       - >-
         (StatusCode() >= 300 && StatusCode() < 400) && (StringSearch("resHeaders", "Location: http://{{.dest}}") || StringSearch("resHeaders", "Location: https://{{.dest}}")
+

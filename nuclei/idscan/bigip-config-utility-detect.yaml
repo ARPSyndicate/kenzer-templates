@@ -8,7 +8,6 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/"
       - "{{BaseURL}}/tmui/login.jsp"
       - "{{BaseURL}}/tmui/tmui/login/welcome.jsp"
     matchers:

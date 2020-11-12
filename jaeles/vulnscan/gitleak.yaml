@@ -1,4 +1,4 @@
-id: git-leak
+id: git-leak-01
 donce: true
 info:
   name: Git Leak Source
@@ -26,5 +26,6 @@ requests:
         StatusCode() == 200 && StringSearch("response","ref: refs")
       - >-
         StatusCode() == 200 && StringSearch("response","[remote ") && StringSearch("response","[branch ")
+
 reference:
   - author: 0xd0ff9

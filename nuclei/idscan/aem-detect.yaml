@@ -1,0 +1,18 @@
+id: aem-detect
+
+info:
+  name: AEM Detect
+  author: glatisant
+  severity: info
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+          - "/content/dam/"
+          - "/etc/clientlibs/"
+        condition: or

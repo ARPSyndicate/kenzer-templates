@@ -20,6 +20,7 @@ requests:
     detections:
       - >-
         StatusCode() == 200 && ResponseTime() > 9 && StringSearch("body", "java.lang")
+
 references:
   - links:
       - https://www.blackhat.com/docs/us-16/materials/us-16-Litchfield-Hackproofing-Oracle-eBusiness-Suite-wp-4.pdf

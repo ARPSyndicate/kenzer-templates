@@ -11,7 +11,6 @@ requests:
       - "{{BaseURL}}/secure/Dashboard.jspa"
       - "{{BaseURL}}/jira/secure/Dashboard.jspa"
       - "{{BaseURL}}/login.jsp"
-      - "{{BaseURL}}/secure/ContactAdministrators!default.jspa"
 
     redirects: true
     max-redirects: 2

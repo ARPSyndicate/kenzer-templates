@@ -21,4 +21,4 @@ requests:
           - "kibanaLoader"
           - "xpack"
           - "Elasticsearch B.V"
-        condition: or 
+        condition: or

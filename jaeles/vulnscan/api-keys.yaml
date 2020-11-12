@@ -1,3 +1,4 @@
+id: api-keys
 name: "api key pattern"
 desc: "grep for api key pattern"
 risk: "High"

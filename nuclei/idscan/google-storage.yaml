@@ -14,4 +14,4 @@ requests:
         words:
           - x-goog-metageneration
           - X-Goog-Metageneration
-        part: header 
+        part: header

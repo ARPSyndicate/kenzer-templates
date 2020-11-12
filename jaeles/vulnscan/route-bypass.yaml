@@ -1,4 +1,4 @@
-id: route-bypass
+id: common-route-01
 type: list
 info:
   name: Weird Case in route handler

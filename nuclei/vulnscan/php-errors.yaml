@@ -28,4 +28,4 @@ requests:
           - "ORA-00921: unexpected end of SQL command"
           - "ORA-00933: SQL command not properly ended"
           - "ORA-00936: missing expression"
-          - "ORA-12541: TNS:no listener" 
+          - "ORA-12541: TNS:no listener"

@@ -16,4 +16,4 @@ requests:
       - type: word
         words:
           - '{"facebook_urls":[{"<img src=x onerror=alert(document.domain)>":""}],"status":1,"message":{"":{"twitter":0}}}'
-        part: body 
+        part: body
