@@ -4,7 +4,7 @@ info:
   risk: Medium
 
 params:
-  - root: '{{.BaseURL}}/'
+  - root: '{{.BaseURL}}'
 
 variables:
   - vul: |
@@ -16,12 +16,11 @@ variables:
       wp-content/plugins/
       wp-content/plugins/hustle/views/admin/dashboard/
       wp-admin/
-
 requests:
   - method: GET
     redirect: false
     url: >-
-      {{.root}}{{.vul}}
+      {{.root}}/{{.vul}}
     headers:
       - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     detections:

@@ -12,19 +12,12 @@ requests:
       - |
         PUT /testing-put.txt HTTP/1.1
         Content-Type: text/plain
-
         testing-payload
-
       - |
         GET /testing-put.txt HTTP/1.1
         Content-Type: text/plain
-
-    matchers-condition: and
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - testing-payload
+      - type: dsl
+        name: multi-req
+        dsl:
+          - 'contains(body_2, "testing-payload") == true'
