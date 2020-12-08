@@ -445,6 +445,7 @@ mmh3:
     -1038557304: webmin
     -1041180225: qnap nas virtualization station
     -1050786453: plesk
+    -1060264737: identity guard self service
     -106646451: wispr (airlan)
     -1067420240: graphql
     -1093172228: truvision (nvr)
@@ -467,6 +468,7 @@ mmh3:
     -1235192469: metasploit
     -1240222446: zhejiang uniview technologies
     -1249852061: microsoft outlook
+    -1252041730: vue.js 
     -1255347784: angular io (angularjs)
     -1255992602: vmware horizon
     -1267819858: keyhelp (keyweb ag)
@@ -816,6 +818,7 @@ mmh3:
     2086228042: mobileiron
     2099342476: pkp (openjournalsystems) public knowledge project
     2109473187: huawei – claro
+    2110041688: meeting room
     2113497004: wijungle
     2121539357: fireeye
     2123863676: grafana v7.1.0
@@ -937,6 +940,7 @@ mmh3:
     979634648: struxureware (schneider electric)
     980692677: cake php
     981867722: atlassian – jira
+    983384876: one identity password manager
     987967490: huawei (network)
     988422585: caprover
     99395752: slack
