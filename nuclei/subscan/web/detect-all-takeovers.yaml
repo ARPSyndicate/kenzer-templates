@@ -45,6 +45,7 @@ requests:
         name: worksites
         regex:
           - "(?:Company Not Found|you&rsquo;re looking for doesn&rsquo;t exist)"
+          - "Hello! Sorry, but the webs>"
 
       - type: word
         name: aha
@@ -94,12 +95,7 @@ requests:
         words:
           - If you're moving your domain away from Cargo you must make this configuration
             through your registrar's DNS control panel.
-
-      - type: word
-        name: campaignmonitor
-        words:
-          - "<strong>Trying to access your account?</strong>"
-          - or <a href="mailto:help@createsend.com
+          - <title>404 &mdash; File not found</title>
 
       - type: word
         name: cargocollective
@@ -111,6 +107,16 @@ requests:
         name: fastly
         words:
           - "Fastly error: unknown domain:"
+      
+      - type: word
+        name: divio
+        words:
+          - Application not responding
+
+      - type: word
+        name: kajabi
+        words:
+          - "<h1>The page you were looking for doesn't exist.</h1>"
 
       - type: word
         name: feedpress
@@ -209,6 +215,11 @@ requests:
         words:
           - It looks like you're lost
           - The page you are looking for is not found
+      
+      - type: word
+        name: statuspage
+        words:
+          - "You are being <a href='https>"
 
       - type: word
         name: launchrock
@@ -372,6 +383,11 @@ requests:
           - https://www.wishpond.com/404?campaign=true
 
       - type: word
+        name: activecampaign
+        words:
+          - 'alt="LIGHTTPD - fly light."'
+
+      - type: word
         name: wordpress
         words:
           - Do you want to register
@@ -391,6 +407,7 @@ requests:
         name: zendesk
         words:
           - this help center no longer exists
+          - Help Center Closed
 
       - type: word
         name: readthedocs
@@ -402,6 +419,7 @@ requests:
         words:
           - <title>Please renew your subscription</title>
           - Please go to the site settings and put the domain name in the Domain tab.
+          - Domain has been assigned
 
       - type: word
         name: smart-jobboard
