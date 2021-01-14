@@ -1,25 +1,18 @@
-id: syfmony-profiler
+id: symfony-profiler
 
 info:
-  name: SymfonyProfiler information leakage
-  author: wabafet
-  severity: medium
+  name: Symfony Profiler
+  author: pd-team
+  severity: high
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/_profiler/phpinfo.php"
-      - "{{BaseURL}}/_profiler/phpinfo"
-
-    matchers-condition: and
+      - "{{BaseURL}}/_profiler/empty/search/results?limit=10"
     matchers:
       - type: word
         words:
-          - "$_SERVER['SERVER_NAME']"
-          - "$_ENV['APP_SECRET']"
-          - "$_ENV['SYMFONY_DOTENV_VARS']"
-        condition: or
-
-      - type: status
-        status:
-          - 200
+          - "<title>Symfony Profiler</title>"
+          - "symfony/profiler/"
+        condition: and
+        part: body 
