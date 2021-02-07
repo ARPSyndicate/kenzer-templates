@@ -6,8 +6,6 @@ info:
 params:
   - root: '{{.BaseURL}}'
 
-replicate:
-  ports: '8080'
 
 requests:
   - method: GET
