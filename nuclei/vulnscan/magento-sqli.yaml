@@ -13,3 +13,6 @@ requests:
       - type: word
         words:
           - "[]"
+      - type: status
+        status:
+          - 200

@@ -2,19 +2,18 @@ id: cisco-asa-panel-detect
 
 info:
   name: Cisco ASA VPN panel detect
-  author: glatisant
+  author: organiccrap
   severity: info
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/+CSCOE+/logon.html"
-      - "{{BaseURL}}/+CSCOE+/win.js"
+
+    redirects: true
+    max-redirects: 2
     matchers:
       - type: word
         words:
           - "<title>SSL VPN Service</title>"
-          - "CSCO_Format"
-          - "CSCO_WebVPN"
-        condition: or
         part: body
