@@ -1,27 +1,50 @@
 id: open-redirect
 
 info:
-  name: Open redirect Detection
-  author: melbadry9 & Elmahdi & @pxmme1337 & @Regala_ & @andirrahmani1 & geeknik
+  name: Open URL redirect detection
+  author: afaq & @melbadry9 & @Elmahdi & @pxmme1337 & @Regala_ & @andirrahmani1 & @geeknik
   severity: low
   description: A user-controlled input redirect users to an external website.
+  tags: redirect
 
 requests:
   - method: GET
 
     path:
-      - "{{BaseURL}}/evil.com/"
-      - "{{BaseURL}}/evil.com//"
-      - "{{BaseURL}}///;@evil.com"
-      - "{{BaseURL}}///evil.com/%2F.."
-      - "{{BaseURL}}/////evil.com"
-      - "{{BaseURL}}//evil.com/%2F.."
-      - "{{BaseURL}}//evil.com/..;/css"
-      - "{{BaseURL}}/evil%E3%80%82com"
-      - "{{BaseURL}}/%5Cevil.com"
-      - "{{BaseURL}}/?Page=evil.com&_url=evil.com&callback=evil.com&checkout_url=evil.com&content=evil.com&continue=evil.com&continueTo=evil.com&counturl=evil.com&data=evil.com&dest=evil.com&dest_url=evil.com&dir=evil.com&document=evil.com&domain=evil.com&done=evil.com&download=evil.com&feed=evil.com&file=evil.com&host=evil.com&html=evil.com&http=evil.com&https=evil.com&image=evil.com&image_src=evil.com&image_url=evil.com&imageurl=evil.com&include=evil.com&langTo=evil.com&media=evil.com&navigation=evil.com&next=evil.com&open=evil.com&out=evil.com&page=evil.com&page_url=evil.com&pageurl=evil.com&path=evil.com&picture=evil.com&port=evil.com&proxy=evil.com&redir=evil.com&redirect=evil.com&redirectUri=evil.com&redirectUrl=evil.com&reference=evil.com&referrer=evil.com&req=evil.com&request=evil.com&retUrl=evil.com&return=evil.com&returnTo=evil.com&return_path=evil.com&return_to=evil.com&rurl=evil.com&show=evil.com&site=evil.com&source=evil.com&src=evil.com&target=evil.com&to=evil.com&uri=evil.com&url=evil.com&val=evil.com&validate=evil.com&view=evil.com&window=evil.com&redirect_to=evil.com"
+      - '{{BaseURL}}/test.com/'
+      - '{{BaseURL}}/test.com//'
+      - '{{BaseURL}}///;@test.com'
+      - '{{BaseURL}}///test.com/%2F..'
+      - '{{BaseURL}}/////test.com'
+      - '{{BaseURL}}//test.com/%2F..'
+      - '{{BaseURL}}//test.com/..;/css'
+      - '{{BaseURL}}/test%E3%80%82com'
+      - '{{BaseURL}}/%5Ctest.com'
+      - '{{BaseURL}}test.com'
+      - '{{BaseURL}}/test.com'
+      - '{{BaseURL}}\test.com'
+      - '{{BaseURL}}//test.com/'
+      - '{{BaseURL}}\/\/test.com/'
+      - '{{BaseURL}}%00\/\/test.com/'
+      - '{{BaseURL}}/%00/test.com/'
+      - '{{BaseURL}}/%09/test.com/'
+      - '{{BaseURL}}/%0a/test.com/'
+      - '{{BaseURL}}/%0d/test.com/'
+      - '{{BaseURL}}////test.com/%2f%2e%2e'
+      - '{{BaseURL}}/%5ctest.com/%2f%2e%2e'
+      - '{{BaseURL}}@test.com'
+      - '{{BaseURL}}/{{BaseURL}}test.com'
+      - '{{BaseURL}}\{{BaseURL}}test.com'
+      - '{{BaseURL}}//{{BaseURL}}test.com/'
+      - '{{BaseURL}}\/\/{{BaseURL}}test.com/'
+      - '{{BaseURL}}%00\/\/{{BaseURL}}test.com/'
+      - '{{BaseURL}}////{{BaseURL}}test.com/%2f%2e%2e'
+      - '{{BaseURL}}/%5c{{BaseURL}}test.com/%2f%2e%2e'
+      - '{{BaseURL}}/〱{{BaseURL}}test.com/%2f%2e%2e'
+      - '{{BaseURL}}@{{BaseURL}}test.com'
+      - '{{BaseURL}}/?page=test.com&_url=test.com&callback=test.com&checkout_url=test.com&content=test.com&continue=test.com&continueTo=test.com&counturl=test.com&data=test.com&dest=test.com&dest_url=test.com&dir=test.com&document=test.com&domain=test.com&done=test.com&download=test.com&feed=test.com&file=test.com&host=test.com&html=test.com&http=test.com&https=test.com&image=test.com&image_src=test.com&image_url=test.com&imageurl=test.com&include=test.com&langTo=test.com&media=test.com&navigation=test.com&next=test.com&open=test.com&out=test.com&page=test.com&page_url=test.com&pageurl=test.com&path=test.com&picture=test.com&port=test.com&proxy=test.com&redir=test.com&redirect=test.com&redirectUri=test.com&redirectUrl=test.com&reference=test.com&referrer=test.com&req=test.com&request=test.com&retUrl=test.com&return=test.com&returnTo=test.com&return_path=test.com&return_to=test.com&rurl=test.com&show=test.com&site=test.com&source=test.com&src=test.com&target=test.com&to=test.com&uri=test.com&url=test.com&val=test.com&validate=test.com&view=test.com&window=test.com&redirect_to=test.com'
     matchers:
       - type: regex
         regex:
-          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_]*\.)?evil\.com(?:\s*?)$'
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_]*\.)?test\.com(?:\s*?)$'
         part: header
