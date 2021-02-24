@@ -1,8 +1,8 @@
-id: phpinfo
+id: phpinfo-files
 
 info:
   name: phpinfo Disclosure
-  author: bauthard
+  author: pd-team
   severity: low
 
 requests:
@@ -19,6 +19,7 @@ requests:
       - "{{BaseURL}}/pinfo.php"
       - "{{BaseURL}}/phpversion.php"
       - "{{BaseURL}}/time.php"
+      - "{{BaseURL}}/index.php"
     matchers:
       - type: word
         words:

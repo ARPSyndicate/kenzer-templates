@@ -269,6 +269,7 @@ requests:
         words:
           - "Sorry, this shop is currently unavailable."
           - "Only one step left!"
+          - 'To finish setting up your new web address, go to your domain settings, click "Connect existing domain"'
 
       - type: word
         name: simplebooklet
