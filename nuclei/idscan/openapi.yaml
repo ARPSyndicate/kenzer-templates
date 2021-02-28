@@ -1,26 +1,26 @@
-id: unauthenticated-airflow-instance
+id: openapi
 
 info:
-  name: Unauthenticated Airflow Instance
-  author: dhiyaneshDK
-  severity: high
+  name: OpenAPI
+  author: pdteam
+  severity: info
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/admin/"
+      - "{{BaseURL}}/openapi.json"
 
     matchers-condition: and
     matchers:
       - type: word
         words:
-          - "Content-Type: text/html"
+          - application/openapi+json
         part: header
 
       - type: word
         words:
-          - "<title>Airflow - DAGs</title>"
-        part: body
+          - openapi
+          - paths
         condition: and
 
       - type: status
