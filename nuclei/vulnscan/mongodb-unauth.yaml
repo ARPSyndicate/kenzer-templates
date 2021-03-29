@@ -13,7 +13,7 @@ network:
         type: hex
 
     host:
-      - "{{Hostname}}:27017"
+      - "{{Hostname}}"
     read-size: 2048
     matchers:
       - type: word

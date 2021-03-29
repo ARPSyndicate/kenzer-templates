@@ -12,7 +12,7 @@ network:
       - data: "info\r\nquit\r\n"
 
     host:
-      - "{{Hostname}}:6379"
+      - "{{Hostname}}"
     read-size: 2048
 
     matchers-condition: and

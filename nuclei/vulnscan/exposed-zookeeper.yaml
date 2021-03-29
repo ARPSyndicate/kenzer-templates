@@ -12,7 +12,7 @@ network:
       - data: "envi\r\nquit\r\n"
 
     host:
-      - "{{Hostname}}:2181"
+      - "{{Hostname}}"
     read-size: 2048
 
     matchers:
