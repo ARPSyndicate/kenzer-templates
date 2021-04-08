@@ -4,6 +4,7 @@ info:
   name: MySQL Dump Files
   author: geeknik & @dwisiswant0
   severity: medium
+  tags: exposure,backup
 
 requests:
   - method: GET
@@ -17,6 +18,7 @@ requests:
       - "{{BaseURL}}/db.sql"
       - "{{BaseURL}}/dump.sql"
       - "{{BaseURL}}/{{Hostname}}.sql"
+      - "{{BaseURL}}/{{Hostname}}_db.sql"
       - "{{BaseURL}}/localhost.sql"
       - "{{BaseURL}}/mysqldump.sql"
       - "{{BaseURL}}/mysql.sql"
