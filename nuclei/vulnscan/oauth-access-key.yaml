@@ -1,19 +1,18 @@
-id: google-api-key
+id: google-oauth-access-key
 
 info:
-  name: Google API Key
-  author: Swissky
+  name: Google OAuth Access Key Disclosure
+  author: Ice3man
   severity: info
-  tags: token,google
+  tags: token
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-      - "{{BaseURL}}/hopfully404"
 
     extractors:
       - type: regex
         part: body
         regex:
-          - "AIza[0-9A-Za-z\\-_]{35}"
+          - 'ya29\.[0-9A-Za-z\-_]+'

@@ -1,19 +1,18 @@
-id: google-api-key
+id: jwt-token
 
 info:
-  name: Google API Key
-  author: Swissky
+  name: JWT Token Disclosure
+  author: Ice3man
   severity: info
-  tags: token,google
+  tags: token
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-      - "{{BaseURL}}/hopfully404"
 
     extractors:
       - type: regex
         part: body
         regex:
-          - "AIza[0-9A-Za-z\\-_]{35}"
+          - 'eyJ[a-zA-Z0-9]{10,}\.eyJ[a-zA-Z0-9]{10,}\.[a-zA-Z0-9_\-]{10,}'

@@ -1,8 +1,8 @@
-id: google-api-key
+id: google-calendar-link
 
 info:
-  name: Google API Key
-  author: Swissky
+  name: Google Calendar URI Disclosure
+  author: Ice3man
   severity: info
   tags: token,google
 
@@ -10,10 +10,9 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-      - "{{BaseURL}}/hopfully404"
 
     extractors:
       - type: regex
         part: body
         regex:
-          - "AIza[0-9A-Za-z\\-_]{35}"
+          - 'https://www\.google\.com/calendar/embed\?src=[A-Za-z0-9%@&;=\-_\./]+'
