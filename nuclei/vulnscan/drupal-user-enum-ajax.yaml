@@ -4,6 +4,7 @@ info:
   name: Drupal User Enumration [Ajax]
   author: 0w4ys
   severity: info
+  tags: drupal
 
 requests:
   - method: GET
@@ -14,19 +15,24 @@ requests:
       - "{{BaseURL}}/?q=views/ajax/autocomplete/user/a"
     headers:
       User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0"
+
     matchers-condition: and
     matchers:
-      - type: regex
-        regex:
-          - '(?i)\{\"a'
-        part: body
       - type: word
         words:
-          - "Content-Type: application/json"
+          - '":"a.'
+          - '":"A.'
+        part: body
+
+      - type: word
+        words:
+          - "application/json"
         part: header
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body
