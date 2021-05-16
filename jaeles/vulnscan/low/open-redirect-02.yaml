@@ -1,9 +1,8 @@
-id: open-redirect-03
-level: 2
+id: open-redirect-02
 type: fuzz
 info:
-  name: Open Redirect FUZZ on Path 01
-  risk: Medium
+  name: Open Redirect FUZZ on Existing Param
+  risk: low
 
 variables:
   - prefix: |
@@ -13,7 +12,6 @@ variables:
       google.com
       example.com
 
-# origin: gonna come from Burp
 payloads:
   - '{{.dest}}'
   - '/{{.dest}}'
@@ -42,9 +40,7 @@ payloads:
 
 requests:
   - generators:
-      - Path("{{.payload}}", "*")
-      - Path("[[.original]]/{{.payload}}", "*")
-    # redirect: true
+      - Query("{{.payload}}")
     detections:
       - >-
         (StatusCode() >= 300 && StatusCode() < 400) && RegexSearch("resHeaders", "Location:\\s(http|https?:)([\\/]+){{.dest}}") && !StringSearch("resHeaders", "Location: https://{{.Host}}")

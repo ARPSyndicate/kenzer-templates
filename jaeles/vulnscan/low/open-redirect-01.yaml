@@ -1,7 +1,9 @@
-id: open-redirect-02
+id: open-redirect-01
 type: fuzz
+risk: low
+level: 2
 info:
-  name: Open Redirect FUZZ on Existing Param
+  name: Open Redirect FUZZ on Param
   risk: Medium
 
 variables:
@@ -11,6 +13,27 @@ variables:
   - dest: |
       google.com
       example.com
+  - name: |
+      next
+      url
+      target
+      to
+      rurl
+      return
+      dest
+      redirect
+      destination
+      redirect_uri
+      redirect_url
+      redir
+      view
+      image_url
+      go
+      returnTo
+      return_to
+      checkout_url
+      continue
+      return_path
 
 payloads:
   - '{{.dest}}'
@@ -40,7 +63,7 @@ payloads:
 
 requests:
   - generators:
-      - Query("{{.payload}}")
+      - Query("{{.payload}}", "{{.name}}")
     detections:
       - >-
         (StatusCode() >= 300 && StatusCode() < 400) && RegexSearch("resHeaders", "Location:\\s(http|https?:)([\\/]+){{.dest}}") && !StringSearch("resHeaders", "Location: https://{{.Host}}")
