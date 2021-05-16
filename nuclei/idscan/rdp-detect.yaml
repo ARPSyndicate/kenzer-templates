@@ -14,7 +14,6 @@ network:
 
     host:
       - "{{Hostname}}"
-      - "{{Hostname}}:3389"
 
     matchers:
       - type: word
