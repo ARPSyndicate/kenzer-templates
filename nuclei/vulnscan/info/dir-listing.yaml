@@ -4,11 +4,12 @@ info:
   name: Directory listing enabled
   author: _harleo & pentest_swissky
   severity: info
+  tags: misc
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/"
+      - "{{BaseURL}}"
     matchers:
       - type: word
         words:

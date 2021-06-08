@@ -2,8 +2,9 @@ id: perl-status
 
 info:
   name: Apache mod_perl Status Page Exposure
-  author: pd-team
+  author: pdteam
   severity: medium
+  tags: config,exposure
 
 requests:
   - method: GET
@@ -14,4 +15,4 @@ requests:
         words:
           - "<title>Apache2::Status"
           - "Perl version"
-        condition: and 
+        condition: and

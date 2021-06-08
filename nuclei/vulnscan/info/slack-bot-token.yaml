@@ -4,7 +4,7 @@ info:
   name: Slack access token
   author: nadino
   severity: info
-  tags: token,slack
+  tags: exposure,token,slack
 
 requests:
   - method: GET

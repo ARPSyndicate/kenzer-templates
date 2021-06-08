@@ -4,7 +4,7 @@ info:
   name: Discord Webhook Disclosure
   author: Ice3man
   severity: info
-  tags: token,discord
+  tags: exposure,token,discord
 
 requests:
   - method: GET

@@ -11,8 +11,11 @@ info:
     An attacker can create archives with files containing “../” in their names,
     making it possible to upload arbitrary files
     to arbitrary directories or overwrite existing ones during archive extraction.
+
     References:
     - https://swarm.ptsecurity.com/vulnerabilities-in-mcafee-epolicy-orchestrator/
+  tags: mcafee,rce
+
 requests:
   - method: GET
     path:

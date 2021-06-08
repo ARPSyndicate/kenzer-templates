@@ -2,8 +2,9 @@ id: airflow-configuration-exposure
 
 info:
   name: Apache Airflow Configuration Exposure
-  author: pd-team
+  author: pdteam
   severity: medium
+  tags: exposure,config,airflow,apache
 
 requests:
   - method: GET
@@ -14,4 +15,4 @@ requests:
         words:
           - '[core]'
           - '[api]'
-        condition: and 
+        condition: and

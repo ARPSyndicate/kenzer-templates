@@ -2,8 +2,9 @@ id: ansible-config-disclosure
 
 info:
   name: Ansible Configuration Exposure
-  author: pd-team
+  author: pdteam
   severity: medium
+  tags: config,exposure
 
 requests:
   - method: GET
@@ -14,4 +15,4 @@ requests:
         words:
           - '[defaults]'
           - '[inventory]'
-        condition: and 
+        condition: and

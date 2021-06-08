@@ -4,7 +4,7 @@ info:
   name: Google API Key
   author: Swissky
   severity: info
-  tags: token,google
+  tags: exposure,token,google
 
 requests:
   - method: GET
