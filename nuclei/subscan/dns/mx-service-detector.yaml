@@ -16,11 +16,11 @@ dns:
     matchers-condition: or
     matchers:
       - type: word
-        name: "Office 365"
+        name: "Office-365"
         words:
           - "mail.protection.outlook.com"
       - type: word
-        name: "Google Apps"
+        name: "Google-Apps"
         words:
           - "aspmx2.googlemail.com"
           - "aspmx3.googlemail.com"
@@ -33,40 +33,40 @@ dns:
           - "mail.protonmail.ch"
           - "mailsec.protonmail.ch"
       - type: word
-        name: "Zoho Mail"
+        name: "Zoho-Mail"
         words:
           - "mx.zoho.eu"
           - "mx2.zoho.eu"
           - "mx3.zoho.eu"
       - type: word
-        name: "ForcePoint Email Security"
+        name: "ForcePoint-Email-Security"
         words:
           - "in.mailcontrol.com"
       - type: word
-        name: "E-Zorg NL"
+        name: "E-Zorg-NL"
         words:
           - "spamfilter02.ezorg.nl"
           - "spamfilter01.ezorg.nl"
           - "spamfilter.ezorg.nl"
           - "spamfilter03.ezorg.nl"
       - type: word
-        name: "Kerio Cloud EU"
+        name: "Kerio-Cloud-EU"
         words:
           - "mx1.eu1.kerio.cloud"
           - "mx2.eu1.kerio.cloud"
       - type: word
-        name: "Kerio Cloud US"
+        name: "Kerio-Cloud-US"
         words:
           - "mx1.us1.kerio.cloud"
           - "mx2.us1.kerio.cloud"
           - "mx3.us1.kerio.cloud"
       - type: word
-        name: "Proofpoint EU"
+        name: "Proofpoint-EU"
         words:
           - "mx1-eu1.ppe-hosted.com"
           - "mx2-eu1.ppe-hosted.com"
       - type: word
-        name: "Proofpoint US"
+        name: "Proofpoint-US"
         words:
           - "mx1-us1.ppe-hosted.com"
           - "mx2-us1.ppe-hosted.com"
