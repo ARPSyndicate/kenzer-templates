@@ -1,22 +1,32 @@
-id: nagios-default-credentials
+id: nagios-default-login
 info:
-  name: Nagios Default Credentials Check
+  name: Nagios Default Login
   author: iamthefrogy
   severity: high
   tags: nagios,default-login
   reference: https://www.nagios.org
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/nagios/side.php"
-    headers:
-      Authorization: Basic bmFnaW9zYWRtaW46bmFnaW9zYWRtaW4=
+  - raw:
+      - |
+        GET /nagios/side.php HTTP/1.1
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+
+    payloads:
+      username:
+        - nagiosadmin
+        - root
+      password:
+        - nagiosadmin
+        - nagiosxi
+    attack: pitchfork
 
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'Current Status'

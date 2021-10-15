@@ -1,25 +1,35 @@
-id: samsung-wlan-ap-default-credentials
+id: samsung-wlan-default-login
 
 info:
-  name: Samsung Wlan AP (WEA453e) Default Credentials
+  name: Samsung Wlan AP (WEA453e) Default Login
   author: pikpikcu
   severity: high
   reference: https://iryl.info/2020/11/27/exploiting-samsung-router-wlan-ap-wea453e/
   tags: samsung,default-login
 
 requests:
-  - method: POST
-    path:
-      - "{{BaseURL}}/main.ehp"
-    body: "httpd;General;lang=en&login_id=root&login_pw=sweap12~"
+  - raw:
+      - |
+        POST /main.ehp HTTP/1.1
+        Host: {{Hostname}}
+
+        httpd;General;lang=en&login_id={{username}}&login_pw={{password}}
+
+    payloads:
+      username:
+        - root
+      password:
+        - sweap12~
+    attack: pitchfork
 
     matchers-condition: and
     matchers:
       - type: word
+        part: body
         words:
           - "document.formParent2.changepasswd1.value"
           - "passwd_change.ehp"
-        part: body
+
       - type: status
         status:
           - 200

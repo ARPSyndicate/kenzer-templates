@@ -1,19 +1,26 @@
-id: visionhub-default-credentials
+id: visionhub-default-login
 
 info:
-  name: VisionHub Default Credentials
+  name: VisionHub Default Login
   author: Techryptic (@Tech)
   severity: high
-  description: Default Credentials of admin:admin on VisionHub application.
+  description: Default Login of admin:admin on VisionHub application.
   tags: visionhub,default-login
   reference: https://www.qognify.com/products/visionhub/
 
 requests:
-  - method: POST
-    path:
-      - '{{BaseURL}}/VisionHubWebApi/api/Login'
-    headers:
-      Authorization: Basic YWRtaW46YWRtaW4=
+  - raw:
+      - |
+        POST /VisionHubWebApi/api/Login HTTP/1.1
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+
+    payloads:
+      username:
+        - admin
+      password:
+        - admin
+    attack: pitchfork
 
     matchers-condition: and
     matchers:

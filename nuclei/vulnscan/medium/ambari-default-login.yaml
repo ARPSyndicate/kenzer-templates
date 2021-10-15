@@ -1,17 +1,23 @@
-id: ambari-default-credentials
+id: ambari-default-login
 
 info:
-  name: Apache Ambari Default Credentials
+  name: Apache Ambari Default Login
   author: pdteam
   severity: medium
   tags: ambari,default-login
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/api/v1/users/admin?fields=*,privileges/PrivilegeInfo/cluster_name,privileges/PrivilegeInfo/permission_name'
-    headers:
-      Authorization: "Basic YWRtaW46YWRtaW4="
+  - raw:
+      - |
+        GET /api/v1/users/admin?fields=*,privileges/PrivilegeInfo/cluster_name,privileges/PrivilegeInfo/permission_name HTTP/1.1
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+    payloads:
+      username:
+        - admin
+      password:
+        - admin
+    attack: pitchfork
     matchers:
       - type: word
         words:

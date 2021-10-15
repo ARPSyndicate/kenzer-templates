@@ -1,7 +1,7 @@
-id: wifisky-default-password
+id: wifisky-default-login
 
 info:
-  name: Wifisky Default Password
+  name: Wifisky Default Login
   author: pikpikcu
   severity: high
   tags: default-login,wifisky
@@ -16,7 +16,14 @@ requests:
         Content-Type: application/x-www-form-urlencoded; charset=UTF-8
         Connection: close
 
-        username=admin&password=admin
+        username={{username}}&password={{password}}
+
+    payloads:
+      username:
+        - admin
+      password:
+        - admin
+    attack: pitchfork
 
     matchers-condition: and
     matchers:

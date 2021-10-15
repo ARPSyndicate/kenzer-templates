@@ -1,19 +1,25 @@
-id: idemia-biometrics-default-credentials
+id: idemia-biometrics-default-login
 
 info:
-  name: IDEMIA BIOMetrics Default Credentials
+  name: IDEMIA BIOMetrics Default Login
   author: Techryptic (@Tech)
   severity: high
-  description: Default Credentials of password=12345 on IDEMIA BIOMetrics application.
+  description: Default Login of password=12345 on IDEMIA BIOMetrics application.
   reference: https://www.google.com/search?q=idemia+password%3D+"12345"
   tags: idemia,biometrics,default-login
 
 requests:
-  - method: POST
-    path:
-      - '{{BaseURL}}/cgi-bin/login.cgi'
+  - raw:
+      - |
+        POST /cgi-bin/login.cgi HTTP/1.1
+        Host: {{Hostname}}
 
-    body: password=12345
+        password={{password}}
+
+    payloads:
+      password:
+        - 12345
+    attack: sniper
 
     matchers-condition: and
     matchers:
