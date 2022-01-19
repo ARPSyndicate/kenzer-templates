@@ -1,10 +1,10 @@
-id: workspaceone-uem-airwatch-dashboard-detect
+id: workspaceone-uem-dashboard
 
 info:
   name: Workspace ONE Unified Endpoint Management (UEM) AirWatch
   author: hanlaomo
   severity: info
-  tags: panel
+  tags: panel,workspaceone
 
 requests:
   - method: GET
