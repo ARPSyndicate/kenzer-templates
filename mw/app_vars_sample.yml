@@ -1,0 +1,3 @@
+# add all paths configured in portal server here and rename file to app_vars.yml
+endpoints:
+  - path/to/something
