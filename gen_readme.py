@@ -12,7 +12,7 @@ markdown += "| :----: | :----: | :----: |\r"
 for template in templates:
     tool = template.split("/")[0].split(".")[0]
     sign = ".".join(template.split("/")[-1].split(".")[0:-1])
-    path = "https://github.com/ARPSyndicate/kenzer-templates/tree/main/" + \
+    path = "https://github.com/ARPSyndicate/kenzer-templates/tree/master/" + \
         template.replace("\\", "/")
     markdown += "| {0} | {1} | [{2}]({3}) |\r".format(sign,
                                                       tool, template, path)
