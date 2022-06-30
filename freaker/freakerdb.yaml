@@ -487,3 +487,10 @@ keyleaks:
   itype: list
   requires: python3 bash nuclei
   detections: "keysenum|."
+
+basic-xss-fuzz:
+  info: Basic XSS Fuzzing
+  path: exploits/basic-xss-fuzz
+  itype: list
+  requires: python3 bash ffuf qsreplace kxss dalfox curl
+  detections: "urlenum|."

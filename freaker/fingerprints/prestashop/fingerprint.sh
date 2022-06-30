@@ -1,1 +1,1 @@
-nuclei -t signatures.yaml -l $1 -timeout 7 -silent -o $2
+nuclei -t signatures.yaml -l $1 -duc -silent -o $2
