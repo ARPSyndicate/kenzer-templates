@@ -474,13 +474,6 @@ CVE-2022-21907:
   requires: python3 bash
   detections: "servenum|iis||headenum|iis||favscan|.*asp.*net.*||idscan|iis"
 
-dalfox-scan:
-  info: XSS Scan using DalFox
-  path: exploits/dalfox-scan
-  itype: list
-  requires: python3 bash dalfox
-  detections: "headenum|.||urlenum|."
-
 keyleaks:
   info: Exposure of Insecure API Keys
   path: exploits/keyleaks
