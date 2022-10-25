@@ -23,7 +23,7 @@ requests:
     payloads:
       uniq:
         - "{{md5(rand_text_numeric(32))}}"
-      headers: helpers/wordlists/headers.txt
+      headers: ../../helpers/wordlists/headers.txt
 
     stop-at-first-match: true
     req-condition: true
