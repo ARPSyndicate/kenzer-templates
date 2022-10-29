@@ -1,26 +1,26 @@
-id: nopcommerce-installer
+id: tiny-rss-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: Tiny Tiny RSS Installer Exposure
   author: DhiyaneshDk
   severity: high
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: title:"Tiny Tiny RSS - Installer"
+  tags: misconfig,tiny,install
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/install'
+      - '{{BaseURL}}/install/'
 
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
+          - 'Tiny Tiny RSS - Installer'
+          - 'Test configuration'
         condition: and
 
       - type: word

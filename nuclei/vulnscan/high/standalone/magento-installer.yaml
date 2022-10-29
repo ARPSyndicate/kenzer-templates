@@ -1,26 +1,26 @@
-id: nopcommerce-installer
+id: magento-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: Magento Installation Wizard
   author: DhiyaneshDk
   severity: high
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: html:"Magento Installation"
+  tags: misconfig,magento,install,exposure
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/install'
+      - "{{BaseURL}}/index.php/install/"
 
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
+          - "Magento Installation Wizard"
+          - "Welcome to Magento's Installation Wizard!"
         condition: and
 
       - type: word

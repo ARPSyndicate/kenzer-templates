@@ -1,26 +1,26 @@
-id: nopcommerce-installer
+id: discourse-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: Discourse Installer Exposure
   author: DhiyaneshDk
-  severity: high
+  severity: unknown
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: title:"Discourse Setup"
+  tags: misconfig,discourse,install
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/install'
+      - '{{BaseURL}}/finish-installation/register'
 
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
+          - 'Discourse Setup'
+          - 'Register Admin Account'
         condition: and
 
       - type: word

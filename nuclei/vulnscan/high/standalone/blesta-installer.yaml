@@ -1,32 +1,32 @@
-id: nopcommerce-installer
+id: blesta-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: Blesta Installer Exposure
   author: DhiyaneshDk
   severity: high
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: html:"Blesta installer"
+  tags: misconfig,blesta,install,exposure
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/install'
+      - '{{BaseURL}}/index.php/install'
 
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
+          - 'Blesta Installer'
+          - 'Install via Web Browser'
         condition: and
 
       - type: word
         part: header
         words:
-          - "text/html"
+          - 'text/html'
 
       - type: status
         status:

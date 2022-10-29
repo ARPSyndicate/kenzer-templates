@@ -1,32 +1,34 @@
-id: nopcommerce-installer
+id: pagekit-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: Pagekit Installer Exposure
   author: DhiyaneshDk
   severity: high
+  reference:
+    - https://github.com/pagekit/pagekit
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: title:"Pagekit Installer"
+  tags: misconfig,pagekit,install,exposure
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/install'
+      - '{{BaseURL}}/installer'
 
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
+          - 'Pagekit Installer'
+          - 'Connect database'
         condition: and
 
       - type: word
         part: header
         words:
-          - "text/html"
+          - 'text/html'
 
       - type: status
         status:

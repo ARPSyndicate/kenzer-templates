@@ -1,26 +1,26 @@
-id: nopcommerce-installer
+id: dokuwiki-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: DokuWiki Install Exposure
   author: DhiyaneshDk
   severity: high
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: title:"DokuWiki"
+  tags: misconfig,dokuwiki,install,exposure
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/install'
+      - "{{BaseURL}}/install.php"
 
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
+          - "DokuWiki Installer"
+          - "Superuser"
         condition: and
 
       - type: word

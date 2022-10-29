@@ -1,27 +1,25 @@
-id: nopcommerce-installer
+id: opensis-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: openSIS Installation Wizard
   author: DhiyaneshDk
   severity: high
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: title:"openSIS"
+  tags: misconfig,opensis,install,exposure
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/install'
+      - "{{BaseURL}}/install/index.php"
 
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
-        condition: and
+          - "openSIS Installer"
 
       - type: word
         part: header

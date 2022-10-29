@@ -1,13 +1,13 @@
-id: nopcommerce-installer
+id: sumowebtools-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: SumoWebTools Installer Exposure
   author: DhiyaneshDk
   severity: high
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: title:"SumoWebTools Installer"
+  tags: misconfig,sumowebtools,install,exposure
 
 requests:
   - method: GET
@@ -19,14 +19,14 @@ requests:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
+          - 'SumoWebTools Installer'
+          - 'configure'
         condition: and
 
       - type: word
         part: header
         words:
-          - "text/html"
+          - 'text/html'
 
       - type: status
         status:

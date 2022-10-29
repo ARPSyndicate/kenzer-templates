@@ -1,13 +1,13 @@
-id: nopcommerce-installer
+id: umbraco-installer
 
 info:
-  name: nopCommerce Installer Exposure
+  name: Umbraco Install Exposure
   author: DhiyaneshDk
   severity: high
   metadata:
     verified: true
-    shodan-query: html:"nopCommerce Installation"
-  tags: misconfig,nopcommerce,install
+    shodan-query: title:"Install Umbraco"
+  tags: misconfig,umbraco,install,oss
 
 requests:
   - method: GET
@@ -19,8 +19,8 @@ requests:
       - type: word
         part: body
         words:
-          - 'nopCommerce installation'
-          - 'Store information'
+          - 'Install Umbraco'
+          - 'umbracoInstallPageBody'
         condition: and
 
       - type: word
