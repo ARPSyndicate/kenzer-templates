@@ -14,7 +14,7 @@ for template in templates:
     if ".yaml" in template and "/fingerprints/" not in template:
         sign = ".".join(template.split("/")[-1].split(".")[0:-1])
     else:
-        sign = template.split("/")[-3]
+        sign = template.split("/")[-2]
     path = "https://github.com/ARPSyndicate/kenzer-templates/tree/master/" + \
         template.replace("\\", "/")
     markdown += "| {0} | {1} | [{2}]({3}) |\r".format(sign,
