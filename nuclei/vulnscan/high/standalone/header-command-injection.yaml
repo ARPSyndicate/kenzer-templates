@@ -19,8 +19,8 @@ requests:
         {{header}}: {{payload}}
 
     payloads:
-      header: ../../helpers/payloads/request-headers.txt
-      payload: ../../helpers/payloads/command-injection.txt
+      header: ../../../helpers/payloads/request-headers.txt
+      payload: ../../../helpers/payloads/command-injection.txt
     attack: clusterbomb
 
     host-redirects: true
