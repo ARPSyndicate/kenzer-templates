@@ -1,29 +1,27 @@
-id: yeswiki-detect
+id: tornado-server-login
 
 info:
-  name: YesWiki Detect
-  author: ritikchaddha
+  name: Tornado Server Panel
+  author: tess
   severity: info
   metadata:
     verified: true
-    shodan-query: http.html:"yeswiki"
-  tags: yeswiki,panel,tech
+    shodan-query: title:"Tornado - Login"
+  tags: panel,tornado
 
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
 
-    host-redirects: true
-    max-redirects: 2
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - 'yeswiki-search'
-          - 'yeswiki-base'
-        condition: or
+          - "Welcome to Docmosis Tornado"
+          - "Please log in:"
+        condition: and
 
       - type: status
         status:
