@@ -1,0 +1,104 @@
+id: open-redirect
+
+info:
+  name: Open Redirect Detection
+  author: princechaddha
+  severity: medium
+  tags: redirect,dast
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    payloads:
+      redirect:
+        - "evil.com"
+
+    fuzzing:
+      - part: query
+        mode: single
+        keys:
+          - callback
+          - checkout
+          - checkout_url
+          - continue
+          - data
+          - dest
+          - destination
+          - dir
+          - domain
+          - feed
+          - file
+          - file_name
+          - file_url
+          - folder
+          - folder_url
+          - forward
+          - from_url
+          - go
+          - goto
+          - host
+          - html
+          - image_url
+          - img_url
+          - load_file
+          - load_url
+          - login_to
+          - login_url
+          - logout
+          - navigation
+          - next
+          - next_page
+          - open
+          - out
+          - page
+          - page_url
+          - path
+          - port
+          - redir
+          - redirect
+          - redirect_to
+          - redirect_uri
+          - redirect_url
+          - reference
+          - return
+          - return_path
+          - return_to
+          - return_url
+          - returnTo
+          - rt
+          - rurl
+          - show
+          - site
+          - target
+          - to
+          - uri
+          - url
+          - val
+          - validate
+          - view
+          - window
+        fuzz:
+          - "https://{{redirect}}"
+
+      - part: query
+        mode: single
+        values:
+          - "https?://" # Replace HTTP URLs with alternatives
+        fuzz:
+          - "https://{{redirect}}"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: header
+        regex:
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)?(?:[a-zA-Z0-9\-_\.@]*)evil\.com\/?(\/|[^.].*)?$' # https://regex101.com/r/ZDYhFh/1
+
+      - type: status
+        status:
+          - 301
+          - 302
+          - 307
