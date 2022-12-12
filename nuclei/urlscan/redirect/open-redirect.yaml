@@ -19,15 +19,25 @@ requests:
       - part: query
         mode: single
         keys:
+          - AuthState
+          - URL
+          - _url
           - callback
           - checkout
           - checkout_url
+          - content
           - continue
+          - continueTo
+          - counturl
           - data
           - dest
+          - dest_url
           - destination
           - dir
+          - document
           - domain
+          - done
+          - download
           - feed
           - file
           - file_name
@@ -40,13 +50,22 @@ requests:
           - goto
           - host
           - html
+          - http
+          - https
+          - image
+          - image_src
           - image_url
+          - imageurl
+          - img
           - img_url
+          - include
+          - langTo
           - load_file
           - load_url
           - login_to
           - login_url
           - logout
+          - media
           - navigation
           - next
           - next_page
@@ -54,25 +73,40 @@ requests:
           - out
           - page
           - page_url
+          - pageurl
           - path
+          - picture
           - port
+          - proxy
+          - r
+          - r2
           - redir
           - redirect
+          - redirectUri
+          - redirectUrl
           - redirect_to
           - redirect_uri
           - redirect_url
           - reference
+          - referrer
+          - req
+          - request
+          - ret
+          - retUrl
           - return
+          - returnTo
           - return_path
           - return_to
           - return_url
-          - returnTo
           - rt
           - rurl
           - show
           - site
+          - source
+          - src
           - target
           - to
+          - u
           - uri
           - url
           - val
