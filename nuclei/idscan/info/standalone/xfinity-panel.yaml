@@ -1,13 +1,12 @@
-id: gyra-master-admin
+id: xfinity-panel
 
 info:
-  name: GYRA Master Admin
+  name: Xfinity Panel
   author: Hardik-Solanki
   severity: info
   metadata:
-    verified: true
-    shodan-query: title:"Login | GYRA Master Admin"
-  tags: panel,master,admin,gyra
+    shodan-query: title:"xfinity"
+  tags: panel,xfinity
 
 requests:
   - method: GET
@@ -19,7 +18,9 @@ requests:
       - type: word
         part: body
         words:
-          - "Login | GYRA Master Admin"
+          - "alt='XFINITY'"
+          - "title='XFINITY'"
+        condition: or
 
       - type: status
         status:

@@ -1,13 +1,12 @@
-id: gyra-master-admin
+id: hue-personal-wireless-panel
 
 info:
-  name: GYRA Master Admin
+  name: HUE Personal Wireless Lighting Panel
   author: Hardik-Solanki
   severity: info
   metadata:
-    verified: true
-    shodan-query: title:"Login | GYRA Master Admin"
-  tags: panel,master,admin,gyra
+    shodan-query: title:"hue personal wireless lighting"
+  tags: hue,iot,wireless
 
 requests:
   - method: GET
@@ -19,7 +18,9 @@ requests:
       - type: word
         part: body
         words:
-          - "Login | GYRA Master Admin"
+          - 'hue personal wireless lighting'
+          - 'Open Source'
+        condition: and
 
       - type: status
         status:
