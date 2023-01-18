@@ -1,22 +1,25 @@
-id: edgeos-login
+id: saltgui-panel
 
 info:
-  name: EdgeOS login Detect
-  author: princechaddha
+  name: SaltGUI Panel Detect
+  author: ritikchaddha
   severity: info
-  tags: login,tech,edgeos,edgemax
+  tags: panel,saltgui
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
+    unsafe: true
+    host-redirects: true
+    max-redirects: 2
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - '<title>EdgeOS</title>'
+          - '<title>SaltGUI</title>'
 
       - type: status
         status:
